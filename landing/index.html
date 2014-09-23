@@ -14,31 +14,57 @@ copy_3: Integrates quickly and easily, without hassle.
 button_text: Signup
 second_page_location: return.html
 ---
+<section id="benefits" class="benefits-section">
+  <div class="container">
+    <div class="row">
+      <h2>{{ page.benefit_1 }}</h2>
+      <p>{{ page.copy_1 }}</p>
 
-<div class="row-fluid marketing">
-  <div class="span8">
-    <h2>{{ page.benefit_1 }}</h2>
-    <p>{{ page.copy_1 }}</p>
+      <h2>{{ page.benefit_2 }}</h2>
+      <p>{{ page.copy_2 }}</p>
 
-    <h2>{{ page.benefit_2 }}</h2>
-    <p>{{ page.copy_2 }}</p>
-
-    <h2>{{ page.benefit_3 }}</h2>
-    <p>{{ page.copy_3 }}</p>
-
-    <ul>
-      {% for member in site.data.members %}
-        <li>
-          <a href="https://github.com/{{ member.github }}">
-            {{ member.name }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-
+      <h2>{{ page.benefit_3 }}</h2>
+      <p>{{ page.copy_3 }}</p>
+    </div>
   </div>
+</section>
 
-  <div class="span4 button-center">
-	<a class="btn btn-large btn-success" href="{{ page.second_page_location }}">{{ page.button_text }}</a>
+<section id="signup" class="signup-section">
+  <div class="container">
+    <div class="row">
+      <h2>Hello! You caught us before we're ready.</h2>
+      <p>We're working hard to put the finishing touches on {{ site.app_name }}. If you'd like us to send you a reminder when we're ready, just put your email in below.</p>
+      {% include mail_form.html %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <div class="row">
+        {% for testimonial in site.data.testimonials %}
+          <div class="col-md-4">
+              <h3>{{ testimonial.quote }}</h2>
+              <p>{{ testimonial.name }}</p>
+          </div>    
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="video" class="video-section">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/i__1Z5a9Sak"
+            allowfullscreen=""></iframe>
+        </div>
+    </div>
   </div>
 </div>
+</section>
+
+
+
