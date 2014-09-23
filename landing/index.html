@@ -11,7 +11,7 @@ copy_2: This should convince the potential customer to sign up.
 benefit_3: It's Freakin' Awesome!
 copy_3: Integrates quickly and easily, without hassle.
 
-button_text: Plans & Pricing
+button_text: Signup
 second_page_location: return.html
 ---
 
@@ -25,6 +25,17 @@ second_page_location: return.html
 
     <h2>{{ page.benefit_3 }}</h2>
     <p>{{ page.copy_3 }}</p>
+
+    <ul>
+      {% for member in site.data.members %}
+        <li>
+          <a href="https://github.com/{{ member.github }}">
+            {{ member.name }}
+          </a>
+        </li>
+      {% endfor %}
+  </ul>
+
   </div>
 
   <div class="span4 button-center">
